@@ -1,15 +1,24 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Counter/><br/><br/>
+  <LoginForm/>
+  <ConditionalRendering/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Counter from './components/Counter.vue';
+import LoginForm from './components/LoginForm.vue';
+import ConditionalRendering from './components/ConditionalRendering.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Counter, 
+    LoginForm,
+    ConditionalRendering
   }
 }
 </script>
