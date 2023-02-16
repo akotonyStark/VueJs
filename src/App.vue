@@ -1,11 +1,12 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <Counter/><br/><br/>
   <LoginForm/>
   <ConditionalRendering/>
   <ListRendering/>
   <DynamicForm/>
+  <ConditionalListRendering/>
 </template>
 
 <script>
@@ -15,6 +16,7 @@ import LoginForm from './components/LoginForm.vue';
 import ConditionalRendering from './components/ConditionalRendering.vue';
 import ListRendering from './components/ListRendering.vue';
 import DynamicForm from './components/DynamicForm.vue';
+import ConditionalListRendering from './components/ConditionalListRendering.vue';
 
 export default {
   name: 'App',
@@ -24,7 +26,8 @@ export default {
     LoginForm,
     ConditionalRendering,
     ListRendering,
-    DynamicForm
+    DynamicForm,
+    ConditionalListRendering
 }
 }
 </script>
@@ -36,6 +39,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
