@@ -1,5 +1,6 @@
 <template>
-    <h2 class="underline" v-bind:class="{
+    <div class="body">
+        <h2 class="underline" v-bind:class="{
         error: error,
         titler: !isTitle
     }">Login Form</h2>
@@ -19,6 +20,8 @@
     }">Inline Styling</h2>
 
     <h2 v-bind:style="headerStyles">Another Inline Styling</h2>
+    </div>
+ 
 
 
 </template>
@@ -60,6 +63,10 @@ export default {
 
 
 <style>
+
+.body{
+    background-color: chocolate;
+}
 .underline {
     text-decoration: underline;
 }

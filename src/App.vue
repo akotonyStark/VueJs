@@ -4,6 +4,8 @@
   <Counter/><br/><br/>
   <LoginForm/>
   <ConditionalRendering/>
+  <ListRendering/>
+  <DynamicForm/>
 </template>
 
 <script>
@@ -11,15 +13,19 @@ import HelloWorld from './components/HelloWorld.vue'
 import Counter from './components/Counter.vue';
 import LoginForm from './components/LoginForm.vue';
 import ConditionalRendering from './components/ConditionalRendering.vue';
+import ListRendering from './components/ListRendering.vue';
+import DynamicForm from './components/DynamicForm.vue';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Counter, 
+    Counter,
     LoginForm,
-    ConditionalRendering
-  }
+    ConditionalRendering,
+    ListRendering,
+    DynamicForm
+}
 }
 </script>
 

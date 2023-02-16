@@ -1,7 +1,10 @@
 <template>
+  <div :style="{background: '#808080'}">
     <button @click="increment">Increment</button>
     <h3>{{ count }}</h3>
     <button @click="decrement">Decrement</button>
+  </div>
+    
 </template>
 
 <script>
