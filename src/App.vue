@@ -7,6 +7,7 @@
   <ListRendering/>
   <DynamicForm/>
   <ConditionalListRendering/>
+  <UsingFunctions/>
 </template>
 
 <script>
@@ -17,6 +18,7 @@ import ConditionalRendering from './components/ConditionalRendering.vue';
 import ListRendering from './components/ListRendering.vue';
 import DynamicForm from './components/DynamicForm.vue';
 import ConditionalListRendering from './components/ConditionalListRendering.vue';
+import UsingFunctions from './components/UsingFunctions.vue';
 
 export default {
   name: 'App',
@@ -27,7 +29,8 @@ export default {
     ConditionalRendering,
     ListRendering,
     DynamicForm,
-    ConditionalListRendering
+    ConditionalListRendering,
+    UsingFunctions
 }
 }
 </script>
