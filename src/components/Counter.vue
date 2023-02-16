@@ -3,6 +3,7 @@
     <button @click="increment">Increment</button>
     <h3>{{ count }}</h3>
     <button @click="decrement">Decrement</button>
+    <button @click="incrementBy(2, $event)">Increment by a number</button>
   </div>
     
 </template>
@@ -26,6 +27,10 @@ export default {
     },
     decrement(){
         this.count--
+    },
+    incrementBy(num, event){
+      this.count = this.count + num
+      console.log(event)
     }
   }
 }

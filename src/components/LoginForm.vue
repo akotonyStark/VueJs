@@ -35,7 +35,7 @@ export default {
         return {
             username: '',
             password: 'asdasdasd',
-            usernameContent: '<b>Username: </b> <input type="text" placeholder="username"/><br/>',
+            usernameContent: '<b>Username: </b> <input type="text"  placeholder="username"/><br/>',
             isDisabled: true,
             isHidden: false,
             error: false,
@@ -55,7 +55,7 @@ export default {
 
     methods: {
         handleUsername(e) {
-            return e.target.value
+            console.log(e.target.value)
         }
     }
 }
