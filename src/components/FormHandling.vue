@@ -1,15 +1,20 @@
 <template>
-    <div :style="{backgroundColor:'#fafafa'}">
+    <div :style="{backgroundColor:'#fafafa', height:'1200px'}">
         <h2 v-bind:style="{marginTop: '50px'}">Job Application Form</h2>
         <pre>{{ JSON.stringify(formData, null, 2) }}</pre>
-    <form @submit="submitFormData">
+    <form @submit.prevent="submitFormData">
         <div class="mt">
             <label for="name">Name</label>
-            <input type="text" id="name" v-model="formData.name"/>
+            <input type="text" id="name" v-model.trim="formData.name"/>
+        </div>
+        <div class="mt">
+            <label for="age">Age</label>
+            <input type="number" id="age" v-model.number="formData.age"/>
         </div>
         <div class="mt">
             <label for="profile">Profile Summary</label>
-            <textarea type="text" id="profile" v-model="formData.profileSummary"></textarea>
+            <!-- The lazy modifier doesn't bind on every key stroke -->
+            <textarea type="text" id="profile" @keyup.enter="printSomethingOnKeyEvent" v-model.lazy="formData.profileSummary"></textarea>
         </div>
         <div class="mt">
             <label for="country">Country</label>
@@ -62,6 +67,7 @@
 </template>
 
 
+
 <script>
     export default{
         name: 'FormHandling',
@@ -74,14 +80,19 @@
                     jobLocation: [],
                     remoteWork: false,
                     skillSet: [],
-                    yearsOfExperience:''
+                    yearsOfExperience:'',
+                    age: ""
                 }
             }
         },
         methods: {
-            submitFormData(event){
-                event.preventDefault()
+            submitFormData(){
+                //event.preventDefault()
                 console.log(this.formData)
+            },
+
+            printSomethingOnKeyEvent(e){
+                console.log('Printing event:', e)
             }
         }
     }
@@ -101,14 +112,14 @@
         margin-right: 20px;
     }
 
-    input[type='text'], textarea, select{
+    input[type="text"], input[type="number"], button, textarea, select{
         display: block;
         width: 400px;
         padding: 6px 12px;
         font-size: 14px;
         line-height: 1.4;
         color: #555;
-        background-color: #fff;
+        /* background-color: #fff; */
     }
 
     .mt{
