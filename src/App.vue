@@ -1,6 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <FormHandling/>
   <Counter/><br/><br/>
   <LoginForm/>
   <ConditionalRendering/>
@@ -9,7 +10,7 @@
   <ConditionalListRendering/>
   <UsingFunctions/>
   <EventHandlers/>
-  <FormHandling/>
+ 
 </template>
 
 <script>

@@ -1,8 +1,8 @@
 <template>
-    <div :style="{backgroundColor:'#fafafa', height:'600px'}">
+    <div :style="{backgroundColor:'#fafafa'}">
         <h2 v-bind:style="{marginTop: '50px'}">Job Application Form</h2>
         <pre>{{ JSON.stringify(formData, null, 2) }}</pre>
-    <form>
+    <form @submit="submitFormData">
         <div class="mt">
             <label for="name">Name</label>
             <input type="text" id="name" v-model="formData.name"/>
@@ -28,6 +28,33 @@
                 <option value="CA">Canada</option>
             </select>
         </div>
+        <div class="mt">
+            <input type="checkbox" id="remoteWork" v-model="formData.remoteWork" true-value="Yes" false-value="No"/>
+            <label for="remoteWork">Open to remote work?</label>
+        </div>
+        <div class="mt">
+            <label>Tech Stack</label>
+            <input type="checkbox" id="react" v-model="formData.skillSet" value="ReactJS"/>
+            <label for="react">ReactJS</label>
+            <input type="checkbox" id="vue" v-model="formData.skillSet" value="VueJS"/>
+            <label for="vue">VueJS</label>
+            <input type="checkbox" id="angular" v-model="formData.skillSet" value="AngularJs"/>
+            <label for="angular">AngularJs</label>
+            
+        </div>
+        <div class="mt">
+            <label>Years of Experience</label>
+            <input type="radio" id="0-2" v-model="formData.yearsOfExperience" value="0-2"/>
+            <label for="0-2">0 to 2 years</label>
+            <input type="radio" id="3-5" v-model="formData.yearsOfExperience" value="3-5"/>
+            <label for="3-5">3 to 5 years</label>
+            <input type="radio" id="6-10" v-model="formData.yearsOfExperience" value="6-10"/>
+            <label for="6-10">6 or more years</label>
+        </div>
+        <div class="mt">
+            <button>Submit</button>
+        </div>
+
     </form>
     </div>
     
@@ -44,12 +71,18 @@
                     name: '',
                     profileSummary: '',
                     country:'',
-                    jobLocation: []
+                    jobLocation: [],
+                    remoteWork: false,
+                    skillSet: [],
+                    yearsOfExperience:''
                 }
             }
         },
         methods: {
-
+            submitFormData(event){
+                event.preventDefault()
+                console.log(this.formData)
+            }
         }
     }
 </script>
