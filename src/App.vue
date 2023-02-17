@@ -9,6 +9,7 @@
   <ConditionalListRendering/>
   <UsingFunctions/>
   <EventHandlers/>
+  <FormHandling/>
 </template>
 
 <script>
@@ -21,6 +22,7 @@ import DynamicForm from './components/DynamicForm.vue';
 import ConditionalListRendering from './components/ConditionalListRendering.vue';
 import UsingFunctions from './components/UsingFunctions.vue';
 import EventHandlers from './components/EventHandlers.vue';
+import FormHandling from './components/FormHandling.vue';
 
 export default {
   name: 'App',
@@ -33,7 +35,8 @@ export default {
     DynamicForm,
     ConditionalListRendering,
     UsingFunctions,
-    EventHandlers
+    EventHandlers,
+    FormHandling
 }
 }
 </script>
@@ -43,7 +46,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   /* margin-top: 60px; */
 }
