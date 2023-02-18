@@ -1,7 +1,7 @@
 <template>
     <div :style="{backgroundColor:'#fafafa', height:'1200px'}">
         <h2 v-bind:style="{marginTop: '50px'}">Job Application Form</h2>
-        <pre>{{ JSON.stringify(formData, null, 2) }}</pre>
+        <pre>{{ JSON.stringify(formData, null,2) }}</pre>
     <form @submit.prevent="submitFormData">
         <div class="mt">
             <label for="name">Name</label>

@@ -1,6 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ComputedProperties/>
   <FormHandling/>
   <Counter/><br/><br/>
   <LoginForm/>
@@ -24,6 +25,7 @@ import ConditionalListRendering from './components/ConditionalListRendering.vue'
 import UsingFunctions from './components/UsingFunctions.vue';
 import EventHandlers from './components/EventHandlers.vue';
 import FormHandling from './components/FormHandling.vue';
+import ComputedProperties from './components/ComputedProperties.vue';
 
 export default {
   name: 'App',
@@ -37,7 +39,8 @@ export default {
     ConditionalListRendering,
     UsingFunctions,
     EventHandlers,
-    FormHandling
+    FormHandling,
+    ComputedProperties
 }
 }
 </script>
