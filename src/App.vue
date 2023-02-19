@@ -1,6 +1,10 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HeroNames name="Tony Stark" heroName="Ironman"/>
+  <HeroNames name="Bruce Banner" heroName="Hulk"/>
+  <HeroNames name="Peter Parker" hero-name="Spiderman"/>
+  <HeroNames :name="name" :heroName="alias"/>
   <Watchers/>
   <ComputedProperties/>
   <FormHandling/>
@@ -28,9 +32,16 @@ import EventHandlers from './components/EventHandlers.vue';
 import FormHandling from './components/FormHandling.vue';
 import ComputedProperties from './components/ComputedProperties.vue';
 import Watchers from './components/Watchers.vue';
+import HeroNames from './components/HeroNames.vue'
 
 export default {
   name: 'App',
+  data(){
+    return{
+    name: 'Augustine',
+    alias: 'Mr. Stark'
+    }
+  },
   components: {
     HelloWorld,
     Counter,
@@ -43,7 +54,9 @@ export default {
     EventHandlers,
     FormHandling,
     ComputedProperties,
-    Watchers
+    Watchers, 
+    HeroNames
+    
 }
 }
 </script>
@@ -58,3 +71,5 @@ export default {
   /* margin-top: 60px; */
 }
 </style>
+
+
