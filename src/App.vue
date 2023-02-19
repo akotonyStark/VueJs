@@ -1,6 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Watchers/>
   <ComputedProperties/>
   <FormHandling/>
   <Counter/><br/><br/>
@@ -26,6 +27,7 @@ import UsingFunctions from './components/UsingFunctions.vue';
 import EventHandlers from './components/EventHandlers.vue';
 import FormHandling from './components/FormHandling.vue';
 import ComputedProperties from './components/ComputedProperties.vue';
+import Watchers from './components/Watchers.vue';
 
 export default {
   name: 'App',
@@ -40,7 +42,8 @@ export default {
     UsingFunctions,
     EventHandlers,
     FormHandling,
-    ComputedProperties
+    ComputedProperties,
+    Watchers
 }
 }
 </script>
