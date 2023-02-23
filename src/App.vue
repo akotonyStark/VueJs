@@ -1,11 +1,22 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+  
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h2>Logged in as {{ username }}</h2>
+  <pre>These are components with props</pre>
+  <hr/>
   <HeroNames name="Tony Stark" heroName="Ironman"/>
   <HeroNames name="Bruce Banner" heroName="Hulk"/>
   <HeroNames name="Peter Parker" hero-name="Spiderman"/>
   <HeroNames :name="name" :heroName="alias"/>
+  <ArticleComponent id="my-article" title="The Purge on Elm street" :numberOfLikes="50" :isPublished="true"/>
+  <hr/>
+  <ChildComponent/>
+  <hr/>
+  <pre>How Watchers Work - similar to useEffect in react</pre>
+  <hr/>
   <Watchers/>
+  <hr/>
   <ComputedProperties/>
   <FormHandling/>
   <Counter/><br/><br/>
@@ -33,13 +44,21 @@ import FormHandling from './components/FormHandling.vue';
 import ComputedProperties from './components/ComputedProperties.vue';
 import Watchers from './components/Watchers.vue';
 import HeroNames from './components/HeroNames.vue'
+import ArticleComponent from './components/Article.vue'
+import ChildComponent from './components/ChildComponent.vue';
 
 export default {
   name: 'App',
   data(){
     return{
     name: 'Augustine',
-    alias: 'Mr. Stark'
+    alias: 'Mr. Stark',
+    username: 'akotonyStark'
+    }
+  },
+  provide(){
+    return{
+      username: this.username
     }
   },
   components: {
@@ -54,9 +73,10 @@ export default {
     EventHandlers,
     FormHandling,
     ComputedProperties,
-    Watchers, 
-    HeroNames
-    
+    Watchers,
+    HeroNames,
+    ArticleComponent,
+    ChildComponent
 }
 }
 </script>
