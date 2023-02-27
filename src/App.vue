@@ -4,6 +4,8 @@
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <button @click="showPopup=true">Open Popup</button>
   <Popup v-show="showPopup" @close="closePopup"/>
+  <InputComponent v-model="description"/>
+  <pre>{{ description }}</pre>
   <h2>Logged in as {{ username }}</h2>
   <pre>These are components with props</pre>
   <hr/>
@@ -49,6 +51,7 @@ import HeroNames from './components/HeroNames.vue'
 import ArticleComponent from './components/Article.vue'
 import ChildComponent from './components/ChildComponent.vue';
 import Popup from './components/Popup.vue';
+import InputComponent from './components/Input.vue';
 
 export default {
   name: 'App',
@@ -57,7 +60,8 @@ export default {
     name: 'Augustine',
     alias: 'Mr. Stark',
     username: 'akotonyStark',
-    showPopup: false
+    showPopup: false,
+    description:''
     }
   },
   methods:{
@@ -87,7 +91,8 @@ export default {
     HeroNames,
     ArticleComponent,
     ChildComponent,
-    Popup
+    Popup,
+    InputComponent
 }
 }
 </script>
