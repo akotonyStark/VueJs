@@ -7,10 +7,20 @@
 </template>
 <script>
 export default {
-    name:'PopupComponent',
-    emits:['close'],
-    data(){
-        return{
+    name: 'PopupComponent',
+    //emits:['close'],
+    emits: {
+
+        close: (name) => {
+            if (!name) {
+                return false
+            }
+            else { return true }
+        }
+
+    },
+    data() {
+        return {
             name: ''
         }
     }
