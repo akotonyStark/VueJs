@@ -2,6 +2,8 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <button @click="showPopup=true">Open Popup</button>
+  <Popup v-show="showPopup" @close="closePopup"/>
   <h2>Logged in as {{ username }}</h2>
   <pre>These are components with props</pre>
   <hr/>
@@ -46,6 +48,7 @@ import Watchers from './components/Watchers.vue';
 import HeroNames from './components/HeroNames.vue'
 import ArticleComponent from './components/Article.vue'
 import ChildComponent from './components/ChildComponent.vue';
+import Popup from './components/Popup.vue';
 
 export default {
   name: 'App',
@@ -53,7 +56,14 @@ export default {
     return{
     name: 'Augustine',
     alias: 'Mr. Stark',
-    username: 'akotonyStark'
+    username: 'akotonyStark',
+    showPopup: false
+    }
+  },
+  methods:{
+    closePopup(data){
+      this.showPopup = false
+      alert(data)
     }
   },
   provide(){
@@ -76,7 +86,8 @@ export default {
     Watchers,
     HeroNames,
     ArticleComponent,
-    ChildComponent
+    ChildComponent,
+    Popup
 }
 }
 </script>
