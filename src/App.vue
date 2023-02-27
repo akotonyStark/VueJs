@@ -6,6 +6,10 @@
   <Popup v-show="showPopup" @close="closePopup"/>
   <InputComponent v-model="description"/>
   <pre>{{ description }}</pre>
+  <Card>
+    <h3>Some content</h3>
+  </Card>
+
   <h2>Logged in as {{ username }}</h2>
   <pre>These are components with props</pre>
   <hr/>
@@ -52,7 +56,7 @@ import ArticleComponent from './components/Article.vue'
 import ChildComponent from './components/ChildComponent.vue';
 import Popup from './components/Popup.vue';
 import InputComponent from './components/Input.vue';
-
+import Card from './components/Card.vue';
 export default {
   name: 'App',
   data(){
@@ -92,8 +96,10 @@ export default {
     ArticleComponent,
     ChildComponent,
     Popup,
-    InputComponent
-}
+    InputComponent,
+    Card
+
+} 
 }
 </script>
 
