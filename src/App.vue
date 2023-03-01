@@ -17,6 +17,14 @@
     <template v-slot:default><img src="https://picsum.photos/200"></template>
     <template v-slot:footer><button>View Details</button></template>
   </Card>
+  <hr/>
+  <pre>Slot Props</pre>
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{ slotProps.firstName }}    {{ slotProps.lastName }}
+    </template>
+  </NameList>
+
 
   <h2>Logged in as {{ username }}</h2>
   <pre>These are components with props</pre>
@@ -65,6 +73,7 @@ import ChildComponent from './components/ChildComponent.vue';
 import Popup from './components/Popup.vue';
 import InputComponent from './components/Input.vue';
 import Card from './components/Card.vue';
+import NameList from './components/NameList.vue';
 export default {
   name: 'App',
   data(){
@@ -105,7 +114,8 @@ export default {
     ChildComponent,
     Popup,
     InputComponent,
-    Card
+    Card,
+    NameList
 
 } 
 }

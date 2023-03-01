@@ -1,7 +1,7 @@
 <template lang="">
     <div class="card">
         <div id="card-header">
-            <slot name="header"></slot>
+            <slot name="header">{{username}}</slot>
         </div>
         <div id="card-content">
             <slot></slot>
@@ -17,6 +17,7 @@
 export default {
     name:'CardSlot',
     //props: ['content']
+    inject:['username']
 }
 </script>
 <style scoped>
