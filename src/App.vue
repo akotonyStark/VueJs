@@ -6,8 +6,12 @@
     <pre>Handling Tabbed - Dynamic Components</pre>
     <button @click="activeTab='TabA'">Tab A</button>
     <button @click="activeTab='TabB'">Tab B</button>
-    <button @click="activeTab='TabC'">Tab C</button>
+    <button @click="activeTab='TabC'">Tab C</button><br/>
 
+    <code>We can use this approach</code>
+    <component v-bind:is="activeTab" />
+
+    <code>Or we can use this approach</code>
     <TabA v-if="activeTab==='TabA'"/>
     <TabB v-if="activeTab==='TabB'"/>
     <TabC v-if="activeTab==='TabC'"/>
