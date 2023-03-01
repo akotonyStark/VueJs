@@ -1,11 +1,18 @@
 <template>
     <h4>This is Tab A</h4>
+    <input type="text" placeholder="FullName" v-model="name"/>
 </template>
 
 
 <script>
 export default {
-    name:'TabA'
+    name:'TabA',
+    data(){
+        return{
+            name:''
+        }
+       
+    }
 }
 </script>
 

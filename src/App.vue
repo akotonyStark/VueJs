@@ -9,7 +9,11 @@
     <button @click="activeTab='TabC'">Tab C</button><br/>
 
     <code>We can use this approach</code>
-    <component v-bind:is="activeTab" />
+    <keep-alive>
+      <component v-bind:is="activeTab" />
+    </keep-alive>
+    
+    <br/>
 
     <code>Or we can use this approach</code>
     <TabA v-if="activeTab==='TabA'"/>
