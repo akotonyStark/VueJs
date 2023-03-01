@@ -2,6 +2,16 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <pre>Handling Tabbed - Dynamic Components</pre>
+    <button @click="activeTab='TabA'">Tab A</button>
+    <button @click="activeTab='TabB'">Tab B</button>
+    <button @click="activeTab='TabC'">Tab C</button>
+
+    <TabA v-if="activeTab==='TabA'"/>
+    <TabB v-if="activeTab==='TabB'"/>
+    <TabC v-if="activeTab==='TabC'"/>
+  </div>
   <button @click="showPopup=true">Open Popup</button>
   <Popup v-show="showPopup" @close="closePopup"/>
   <InputComponent v-model="description"/>
@@ -80,6 +90,9 @@ import Popup from './components/Popup.vue';
 import InputComponent from './components/Input.vue';
 import Card from './components/Card.vue';
 import NameList from './components/NameList.vue';
+import TabA from './components/TabA.vue'
+import TabB from './components/TabB.vue'
+import TabC from './components/TabC.vue'
 export default {
   name: 'App',
   data(){
@@ -88,7 +101,8 @@ export default {
     alias: 'Mr. Stark',
     username: 'akotonyStark',
     showPopup: false,
-    description:''
+    description:'',
+    activeTab: 'TabA'
     }
   },
   methods:{
@@ -121,7 +135,7 @@ export default {
     Popup,
     InputComponent,
     Card,
-    NameList
+    NameList, TabA, TabB, TabC
 
 } 
 }

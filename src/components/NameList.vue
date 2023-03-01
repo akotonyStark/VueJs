@@ -19,6 +19,9 @@ export default {
     }
 }
 </script>
-<style lang="">
-    
+<style scoped>
+    h3{
+        color: orange;
+    }
+   
 </style>
