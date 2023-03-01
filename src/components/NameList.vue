@@ -1,7 +1,7 @@
 <template lang="">
     <h3 v-for="name in names" :key="name.last">
-        <slot :firstName="name.first"></slot>
-        <slot :lastName="name.last"></slot>
+        <slot :firstName="name.first" :lastName="name.last"></slot>
+      
     </h3>
 </template>
 

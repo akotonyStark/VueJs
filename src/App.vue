@@ -21,7 +21,13 @@
   <pre>Slot Props</pre>
   <NameList>
     <template v-slot:default="slotProps">
-      {{ slotProps.firstName }}    {{ slotProps.lastName }}
+      {{ slotProps.firstName }} {{ slotProps.lastName }}
+    </template>
+  </NameList>
+
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{ slotProps.lastName }}, {{ slotProps.firstName }}    
     </template>
   </NameList>
 
