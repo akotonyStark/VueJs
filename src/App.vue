@@ -2,7 +2,9 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 
   <HelloWorld msg="Welcome to Your Vue.js App" />
-  
+
+  <LoadPosts/>
+
   <button @click="showModal = true">Show Modal</button>
   <teleport to="#portal-root">
     <Portal />
@@ -120,7 +122,8 @@ import TabA from './components/TabA.vue'
 import TabB from './components/TabB.vue'
 import TabC from './components/TabC.vue'
 import Portal from './components/Portal.vue';
-import ModalUI from './components/Modal.vue'
+import ModalUI from './components/Modal.vue';
+import LoadPosts from './components/APIComponent.vue'
 
 export default {
   name: 'App',
@@ -167,7 +170,8 @@ export default {
     Card,
     NameList, TabA, TabB, TabC,
     Portal,
-    ModalUI
+    ModalUI,
+    LoadPosts
 
   }
 }
