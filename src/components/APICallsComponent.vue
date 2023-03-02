@@ -5,7 +5,7 @@
         <form @submit.prevent="createPost">
             <div>
                 <label for="userId">Post User ID:</label>
-                <input type="text" id="userId" v-model="formData.userId"/>
+                <input type="text" id="userId" v-model="formData.userId" ref="userRef"/>
             </div>
             <div>
                 <label for="userId">Post Title:</label>
@@ -56,6 +56,9 @@ export default {
     //created lifecycle is the best place to make api calls
     created(){
         this.getPosts()
+    },
+    mounted(){
+        this.$refs.userRef.focus()
     }
 }
 </script>
