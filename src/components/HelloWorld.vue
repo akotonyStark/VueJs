@@ -1,15 +1,24 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1><h2>{{ count }}</h2><button @click="incrementCount">Increment</button>
+
+
  
   </div>
 </template>
 
 <script>
+import CounterMixin from '../mixins/utility'
 export default {
   name: 'HelloWorld',
+  mixins: [CounterMixin],
   props: {
     msg: String
+  },
+  data(){
+    return {
+      count: 100
+    }
   }
 }
 </script>
@@ -35,3 +44,5 @@ a {
   background-color: #42b983;
 }
 </style>
+
+

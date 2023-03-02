@@ -1,6 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 
+  <!-- used a mixin in this component -->
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <!-- Api Calss -->
   <LoadPosts />
