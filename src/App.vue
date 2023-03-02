@@ -123,7 +123,7 @@ import TabB from './components/TabB.vue'
 import TabC from './components/TabC.vue'
 import Portal from './components/Portal.vue';
 import ModalUI from './components/Modal.vue';
-import LoadPosts from './components/APIComponent.vue'
+import LoadPosts from './components/APICallsComponent.vue'
 
 export default {
   name: 'App',
