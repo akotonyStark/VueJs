@@ -1,28 +1,45 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+
+  <HelloWorld msg="Welcome to Your Vue.js App" />
   
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <button @click="showModal = true">Show Modal</button>
+  <teleport to="#portal-root">
+    <Portal />
+
+    <ModalUI v-show="showModal" @close="showModal = false">
+      This is a modal message
+    </ModalUI>
+  </teleport>
+
+
+
+
+
   <div>
     <pre>Handling Tabbed - Dynamic Components</pre>
-    <button @click="activeTab='TabA'">Tab A</button>
-    <button @click="activeTab='TabB'">Tab B</button>
-    <button @click="activeTab='TabC'">Tab C</button><br/>
+    <button @click="activeTab = 'TabA'">Tab A</button>
+    <button @click="activeTab = 'TabB'">Tab B</button>
+    <button @click="activeTab = 'TabC'">Tab C</button><br />
 
     <code>We can use this approach</code>
     <keep-alive>
       <component v-bind:is="activeTab" />
     </keep-alive>
-    
-    <br/>
+
+    <br />
 
     <code>Or we can use this approach</code>
-    <TabA v-if="activeTab==='TabA'"/>
-    <TabB v-if="activeTab==='TabB'"/>
-    <TabC v-if="activeTab==='TabC'"/>
+    <TabA v-if="activeTab === 'TabA'" />
+    <TabB v-if="activeTab === 'TabB'" />
+    <TabC v-if="activeTab === 'TabC'" />
   </div>
-  <button @click="showPopup=true">Open Popup</button>
-  <Popup v-show="showPopup" @close="closePopup"/>
-  <InputComponent v-model="description"/>
+
+
+
+  <button @click="showPopup = true">Open Popup</button>
+  <Popup v-show="showPopup" @close="closePopup" />
+  <InputComponent v-model="description" />
   <pre>{{ description }}</pre>
   <Card>
     <h3>Some content</h3>
@@ -31,11 +48,13 @@
     <img src="https://picsum.photos/200">
   </Card>
   <Card>
-    <template v-slot:header><h2>Header</h2></template>
+    <template v-slot:header>
+      <h2>Header</h2>
+    </template>
     <template v-slot:default><img src="https://picsum.photos/200"></template>
     <template v-slot:footer><button>View Details</button></template>
   </Card>
-  <hr/>
+  <hr />
   <pre>Slot Props</pre>
   <NameList>
     <template v-slot:default="slotProps">
@@ -45,37 +64,36 @@
 
   <NameList>
     <template v-slot:default="slotProps">
-      {{ slotProps.lastName }}, {{ slotProps.firstName }}    
+      {{ slotProps.lastName }}, {{ slotProps.firstName }}
     </template>
   </NameList>
 
 
   <h2>Logged in as {{ username }}</h2>
   <pre>These are components with props</pre>
-  <hr/>
-  <HeroNames name="Tony Stark" heroName="Ironman"/>
-  <HeroNames name="Bruce Banner" heroName="Hulk"/>
-  <HeroNames name="Peter Parker" hero-name="Spiderman"/>
-  <HeroNames :name="name" :heroName="alias"/>
-  <ArticleComponent id="my-article" title="The Purge on Elm street" :numberOfLikes="50" :isPublished="true"/>
-  <hr/>
-  <ChildComponent/>
-  <hr/>
+  <hr />
+  <HeroNames name="Tony Stark" heroName="Ironman" />
+  <HeroNames name="Bruce Banner" heroName="Hulk" />
+  <HeroNames name="Peter Parker" hero-name="Spiderman" />
+  <HeroNames :name="name" :heroName="alias" />
+  <ArticleComponent id="my-article" title="The Purge on Elm street" :numberOfLikes="50" :isPublished="true" />
+  <hr />
+  <ChildComponent />
+  <hr />
   <pre>How Watchers Work - similar to useEffect in react</pre>
-  <hr/>
-  <Watchers/>
-  <hr/>
-  <ComputedProperties/>
-  <FormHandling/>
-  <Counter/><br/><br/>
-  <LoginForm/>
-  <ConditionalRendering/>
-  <ListRendering/>
-  <DynamicForm/>
-  <ConditionalListRendering/>
-  <UsingFunctions/>
-  <EventHandlers/>
- 
+  <hr />
+  <Watchers />
+  <hr />
+  <ComputedProperties />
+  <FormHandling />
+  <Counter /><br /><br />
+  <LoginForm />
+  <ConditionalRendering />
+  <ListRendering />
+  <DynamicForm />
+  <ConditionalListRendering />
+  <UsingFunctions />
+  <EventHandlers />
 </template>
 
 <script>
@@ -101,26 +119,30 @@ import NameList from './components/NameList.vue';
 import TabA from './components/TabA.vue'
 import TabB from './components/TabB.vue'
 import TabC from './components/TabC.vue'
+import Portal from './components/Portal.vue';
+import ModalUI from './components/Modal.vue'
+
 export default {
   name: 'App',
-  data(){
-    return{
-    name: 'Augustine',
-    alias: 'Mr. Stark',
-    username: 'akotonyStark',
-    showPopup: false,
-    description:'',
-    activeTab: 'TabA'
+  data() {
+    return {
+      name: 'Augustine',
+      alias: 'Mr. Stark',
+      username: 'akotonyStark',
+      showPopup: false,
+      description: '',
+      activeTab: 'TabA',
+      showModal: false
     }
   },
-  methods:{
-    closePopup(data){
+  methods: {
+    closePopup(data) {
       this.showPopup = false
       alert(data)
     }
   },
-  provide(){
-    return{
+  provide() {
+    return {
       username: this.username
     }
   },
@@ -143,9 +165,11 @@ export default {
     Popup,
     InputComponent,
     Card,
-    NameList, TabA, TabB, TabC
+    NameList, TabA, TabB, TabC,
+    Portal,
+    ModalUI
 
-} 
+  }
 }
 </script>
 
