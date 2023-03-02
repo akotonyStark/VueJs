@@ -2,9 +2,10 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 
   <HelloWorld msg="Welcome to Your Vue.js App" />
+  <!-- Api Calss -->
+  <LoadPosts />
 
-  <LoadPosts/>
-
+  <!-- Modals -->
   <button @click="showModal = true">Show Modal</button>
   <teleport to="#portal-root">
     <Portal />
@@ -17,7 +18,7 @@
 
 
 
-
+  <!-- Tabs -->
   <div>
     <pre>Handling Tabbed - Dynamic Components</pre>
     <button @click="activeTab = 'TabA'">Tab A</button>
@@ -37,12 +38,15 @@
     <TabC v-if="activeTab === 'TabC'" />
   </div>
 
+  <!-- demonstrating emitters -->
+  <div><button @click="showPopup = true">Open Popup</button>
+    <Popup v-show="showPopup" @close="closePopup" />
+  </div>
 
-
-  <button @click="showPopup = true">Open Popup</button>
-  <Popup v-show="showPopup" @close="closePopup" />
   <InputComponent v-model="description" />
   <pre>{{ description }}</pre>
+
+  <!-- Slots -->
   <Card>
     <h3>Some content</h3>
   </Card>

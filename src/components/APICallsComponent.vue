@@ -52,6 +52,10 @@ export default {
                 this.errorMessage = error
             })
         }
+    },
+    //created lifecycle is the best place to make api calls
+    created(){
+        this.getPosts()
     }
 }
 </script>
