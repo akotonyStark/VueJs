@@ -80,7 +80,7 @@
                     jobLocation: [],
                     remoteWork: false,
                     skillSet: [],
-                    yearsOfExperience:'',
+                    yearsOfExperience:'0-2',
                     age: ""
                 }
             }
